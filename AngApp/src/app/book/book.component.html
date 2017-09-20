@@ -1,0 +1,10 @@
+<div class="book">
+  <div class="content">
+  Book Title: {{book.Title}}<br/>
+  Author: {{book.Author}}<br/>
+  Year: {{book.Year}}<br/><br/>
+  <button (click)="DeleteMe(book.Id)" class="pointer">Delete book</button>
+  <button (click)="OpenBook(book.Id)" class="pointer">Open book</button>
+  <button (click)="EditBook(book.Id)" class="pointer">Edit book</button>
+  </div>
+</div>

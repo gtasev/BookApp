@@ -1,0 +1,15 @@
+<div class="content">
+<form ngNativeValidate [formGroup]='book' (ngSubmit)="InsertBook(book.value)" class="form"
+      <!--[class.error]="!book.valid && book.touched"-->>
+  <h3>Input new book</h3>
+  <label>Book title</label><br/>
+  <input type="text" formControlName="title"/><br/>
+  <!--<p *ngIf="book.controls.title.errors">This Field is required</p>-->
+  <label>Book author</label><br/>
+  <input type="text" formControlName="author"/><br/>
+  <label>Year</label><br/>
+  <input type="number" formControlName="year"/><br/><br/>
+  <input type="submit" class="inputButton"/>
+</form>
+  <button (click)="Home()" class="homeButton"> Back </button>
+</div>

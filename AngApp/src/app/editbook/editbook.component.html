@@ -1,0 +1,31 @@
+<div class="content">
+<div>
+  Book Title: {{book?.Title}}<br/>
+  Author: {{book?.Author}}<br/>
+  Year: {{book?.Year}}<br/>
+</div><br/>
+  <div [ngClass]="{off: flag == 1}">
+    <p>Progress</p>
+    <div *ngFor="let p of progress">
+      <div>date: {{p.ReportedOn}}</div>
+      <div>page: {{p.Units}}</div><br>
+    </div>
+  </div>
+<button (click)="show = 1" [ngClass]="{off: flag == 1 || show == 1}" class="pointer">Input reading progress</button>
+<div [ngClass]="{inputOff: show != 1}"><br/>
+  <p>Input page number</p>
+<input type="number" #page/><br>
+<button (click)="InputProgress(book.Id, page.value)" class="inputButton">Submit</button>
+</div>
+<form [formGroup]="bookGroup" (ngSubmit)="EditBook(bookGroup.value)" [ngClass]="{off: flag != 1}">
+  <h3>Input changes</h3>
+  <label>Book title</label><br/>
+  <input type="text" formControlName="title"/><br/>
+  <label>Book author</label><br/>
+  <input type="text" formControlName="author"/><br/>
+  <label>Year</label><br/>
+  <input type="number" formControlName="year"/><br/><br/>
+  <input type="submit" class="homeButton"/>
+</form>
+  <button (click)="Home()" class="homeButton"> Back </button>
+</div>
